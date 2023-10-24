@@ -1,0 +1,200 @@
+.toper {
+	background: $black;
+	color: #919397;
+	display: none;
+	@media (min-width: $tablet) {
+		display: block;
+	}
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 52px;
+	}
+	&__menu {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		font-size: 14px;
+		&-item {
+			&:last-child {
+				@media (min-width: $laptop) {
+					margin-left: 20px;
+				}
+			}
+		}
+		&-link {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			&:hover {
+				color: $white;
+			}
+			svg {
+				width: 10px;
+				height: 10px;
+				transform: rotate(90deg);
+			}
+			span {
+				color: $light;
+				font-weight: 500;
+				text-decoration: underline;
+			}
+		}
+	}
+	&__icons {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		&-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		&-button {
+			width: 20px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: none;
+			padding: 0;
+			border: none;
+			&:hover {
+				color: $white;
+			}
+			svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}
+.header {
+	padding-top: 10px;
+	margin-bottom: 40px;
+	@media (min-width: $tablet) {
+		padding-top: 40px;
+	}
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__col {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		@media (min-width: $tablet) {
+			justify-content: flex-start;
+		}
+	}
+	&__col + &__col {
+		display: none;
+		gap: 30px;
+		@media (min-width: $laptop) {
+			display: flex;
+		}
+	}
+	&__burger {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		background: $black;
+		border: none;
+		border-radius: 10px;
+		color: $white;
+		&:hover {
+			background: $light;
+		}
+		@media (min-width: $tablet) {
+			order: 1;
+			border-right: -10px;
+		}
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	&__logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (min-width: $tablet) {
+			order: 2;
+			margin-left: 20px;
+		}
+		img {
+			height: 40px;
+			@media (min-width: $tablet) {
+				height: 44px;
+			}
+		}
+	}
+	&__profile {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		background: $white;
+		border: none;
+		border-radius: 10px;
+		color: $black;
+		&:hover {
+			background: $light;
+		}
+		@media (min-width: $tablet) {
+			display: none;
+		}
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	&__menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 25px;
+		width: 100%;
+		gap: 20px;
+		@media (min-width: $tablet) {
+			gap: 30px;
+			order: 2;
+			width: auto;
+			margin: 0;
+			justify-content: flex-start;
+			margin-left: 30px;
+		}
+		&-item {
+			font-weight: 500;
+			&:hover {
+				color: $green;
+			}
+			@media (min-width: $tablet) {
+				font-size: 18px;
+			}
+		}
+	}
+	&__phone {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			color: $green;
+		}
+		@media (min-width: $desktop) {
+			display: flex;
+		}
+	}
+	&__callback {
+		display: flex;
+	}
+}

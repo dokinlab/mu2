@@ -1,0 +1,548 @@
+@import "blocks/normalize";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url(fancybox.css);
+@import url(swiper.css);
+
+$tablet:   768px;
+$laptop:   992px;
+$desktop: 1290px;
+
+$min-width: 360px;
+$circe: 'Inter', sans-serif;
+
+$transition: 0.3s;
+
+$black:            #141414;
+$white:            #FFFFFF;
+$green:            #0AC964;
+$light:            #ABD7A0;
+$silver:           #F4F4F4;
+
+$rotate180: rotate(180deg);
+.rotate180{transform:rotate(180deg)}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+}
+
+::-webkit-input-placeholder{color:#878787;opacity:1}
+:-ms-input-placeholder{color:#878787;opacity:1}
+::-ms-input-placeholder{color:#878787;opacity:1}
+::-moz-placeholder{color:#878787;opacity:1}
+::placeholder{color:#878787;opacity:1}
+:focus::-webkit-input-placeholder{color:transparent}
+:focus:-ms-input-placeholder{color:transparent}
+:focus::-ms-input-placeholder{color:transparent}
+:focus::-moz-placeholder{color:transparent}
+:focus::placeholder{color:transparent}
+
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{border-radius:999px;background:#E5E5E5}
+::-webkit-scrollbar-thumb{border-radius:999px;background:$light}
+
+a, button, select{color:inherit}
+a{text-decoration:none}
+a, input[type=button], input[type=submit], button {
+  transition: $transition;
+  cursor: pointer;
+}
+
+.br,img,svg{display:block}
+img,video{object-fit:cover}
+.float-left{float:left}
+.float-right{float:right}
+.clear-both {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+#body {
+  font-family: $circe;
+  color: $black;
+  background: $silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: $min-width;
+  min-height: 100vh;
+  line-height: 1.4;
+  gap: 100px;
+}
+
+.container {
+    width: 100%;
+    max-width: $desktop;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.to-top {
+  display: none;
+}
+
+.button {
+  background: $green;
+  color: $white;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid $green;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 400;
+  &:hover {
+    background: #1E9054;
+    border-color: #1E9054;
+  }
+  &_lined {
+    background: transparent;
+    border-color: $white;
+    color: $white;
+    &:hover {
+      background: $light;
+      border-color: $light;
+      color: $black;
+    }
+  }
+  &_white {
+    background: $white;
+    color: $black;
+    border-color: $white;
+    &:hover {
+      background: $light;
+      border-color: $light;
+    }
+  }
+  &_silver {
+    background: $silver;
+    color: $black;
+    border-color: $silver;
+    &:hover {
+      background: $light;
+      border-color: $light;
+    }
+  }
+}
+
+.input {
+  background: $white;
+  color: $black;
+  border: 1px solid $white;
+  height: 60px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 10px;
+  &[type=tel] {
+    letter-spacing: 1px;
+  }
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  &__icon {
+    width: 25px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    input {
+      display: none;
+    }
+    span {
+      background: $white;
+      width: 15px;
+      height: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2px;
+      svg {
+        width: 10px;
+        height: 10px;
+        color: $black;
+        transition: $transition;
+        opacity: 0;
+        position: relative;
+        left: 1px;
+      }
+    }
+    input:checked + span svg {
+      opacity: 1;
+    }
+  }
+  &__text {
+    max-width: calc(100% - 25px);
+    font-size: 12px;
+    min-height: 15px;
+    display: flex;
+    align-items: center;
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.navs {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+    color: $white;
+    border: none;
+    padding: 0;
+    &:hover {
+      background: $light;
+      color: $black;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &_white {
+    button {
+      background: $white;
+      color: $black;
+      &:hover {
+        background: $light;
+        color: $black;
+      }
+    }
+  }
+}
+
+.paths {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2px;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 80px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    span {
+      transition: $transition;
+      position: relative;
+      top: 0;
+    }
+    &:hover span {
+      top: 5px;
+    }
+    b {
+      border-radius: 1px;
+      width: 100%;
+      height: 5px;
+    }
+  }
+}
+
+.big-title {
+  display: flex;
+  align-items: flex-start;
+  font-size: 25px;
+  line-height: 1.2;
+  @media (min-width: $tablet) {
+    text-transform: uppercase;
+  }
+  @media (min-width: $desktop) {
+    font-size: 35px;
+  }
+  &__icon-face {
+    width: 60px;
+    height: 60px;
+    background: $light;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    img {
+      width: 44px;
+      height: 57px;
+    }
+  }
+  span {
+    width: calc(100% - 60px);
+    padding-left: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.warning {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: $white;
+  padding: 20px;
+  svg {
+    width: 40px;
+    height: 40px;
+    color: $light;
+  }
+  span {
+    width: calc(100% - 40px);
+    padding-left: 20px;
+  }
+}
+
+.thing {
+  border-radius: 20px;
+  background: $white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__pic {
+    width: 100%;
+    aspect-ratio: 26/20;
+    border-radius: 20px;
+    max-height: 200px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__text {
+    color: #878787;
+    font-size: 14px;
+  }
+  .button {
+    font-size: 14px;
+  }
+}
+
+.person {
+  border-radius: 20px;
+  background: $white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__pic {
+    width: 100%;
+    aspect-ratio: 26/27;
+    border-radius: 20px;
+    max-height: 270px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__text {
+    color: #878787;
+    font-size: 14px;
+  }
+  &__tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    span {
+      font-size: 12px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: $silver;
+      height: 30px;
+      line-height: 30px;
+    }
+    b {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  svg {
+    width: 16px;
+    height: 16px;
+    color: $light;
+  }
+}
+
+.review {
+  background: $white;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  @media (min-width: $tablet) {
+    padding: 30px 20px;
+    gap: 40px;
+  }
+  @media (min-width: $laptop) {
+    padding: 40px;
+  }
+  &__toper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+    }
+    &-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+    }
+    &-body {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: $tablet) {
+        width: calc(100% - 80px);
+        padding-left: 20px;
+        min-height: 80px;
+        justify-content: space-between;
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      b {
+        font-weight: 600;
+      }
+      span {
+        color: #838383;
+        font-size: 14px;
+      }
+    }
+    .rating {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      @media (min-width: $tablet) {
+        position: relative;
+        left: 0;
+      }
+    }
+  }
+  &__text {
+    font-size: 14px;
+    @media (min-width: $tablet) {
+      font-size: 16px;
+    }
+  }
+  .solution__body-link {
+    margin: 0;
+  }
+}
+
+.video {
+  aspect-ratio: 29/40;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  &:before {
+    content: '';
+    background: $black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: 2;
+  }
+  img {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  button {
+    z-index: 3;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: $green;
+    color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    &:hover {
+      background: $light;
+      color: $black;
+    }
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 2px;
+  }
+}
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/slideshow";
+@import "blocks/things";
+@import "blocks/solution";
+@import "blocks/callback";
+@import "blocks/simple";
+@import "blocks/tasks";
+@import "blocks/choose";
+@import "blocks/cases";
+@import "blocks/team";
+@import "blocks/reviews";
+@import "blocks/clients";
+@import "blocks/logos";
+@import "blocks/faqs";
