@@ -22,10 +22,49 @@ document.addEventListener("DOMContentLoaded", () => {
         $(this).parent().toggleClass('active');
     });
 
+
+    $('.js-open-nav').on('click',function(){
+        $('#body').addClass('nav-actived');
+    });
+
+    $('.js-close-nav').on('click',function(){
+        $('#body').removeClass('nav-actived');
+    });
+
+    $('.js-toggle-nav').on('click',function(){
+        $('#body').toggleClass('nav-actived');
+    });
+
+
+    $('.js-toggle-search').on('click',function(){
+        $('#body').toggleClass('search-actived');
+    });
+
+
+    $('.js-toggle-profile').on('click',function(){
+        $('#body').toggleClass('profile-actived');
+    });
+
+
+    $('.js-toggle-cities').on('click',function(){
+        $('#body').toggleClass('cities-actived');
+    });
+
+
+    $('.js-toggle-menu').on('click',function(){
+        $('.toper__menu').toggleClass('active');
+    });
+
+
     $(document).keyup(function(e) {
         if (e.key === "Escape") {
             $('.js-toggle').removeClass('active');
             $('.js-parent-toggle').parent().removeClass('active');
+            $('#body').removeClass('nav-actived');
+            $('#body').removeClass('search-actived');
+            $('#body').removeClass('profile-actived');
+            $('#body').removeClass('cities-actived');
+            $('.toper__menu').removeClass('active');
         }
     });
 
@@ -41,6 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if ($('[type=tel]').is('[type=tel]')){
         $('[type=tel]').mask('+7 (999) 999-99-99');
+    }
+
+
+    if ($('.js-select2').is('.js-select2')){
+        $('.js-select2').select2();
     }
 
 
@@ -214,5 +258,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    if ($('.js-b4nn3r').is('.js-b4nn3r')){
+        let slideshowSwiper = new Swiper ('.js-b4nn3r', {
+            loop: true,
+            spaceBetween: 20,
+            navigation: {
+                prevEl: '.js-b4nn3r-prev',
+                nextEl: '.js-b4nn3r-next',
+            }
+        });
+    }
 
-}); // END DOM CONTENT LOADED WRAPPER
+    if ($('.js-consult').is('.js-consult')){
+        let consultSwiper = new Swiper ('.js-consult', {
+            loop: true,
+            spaceBetween: 20,
+            navigation: {
+                prevEl: '.js-consult-prev',
+                nextEl: '.js-consult-next',
+            }
+        });
+    }
+
+
+}); // DOMContentLoaded

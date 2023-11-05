@@ -74,10 +74,11 @@
 	&__copy {
 		background: $black;
 		color: $white;
-		padding-top: 20px;
 		margin-top: 30px;
+		padding-top: 20px;
+		padding-bottom: 52px;
 		@media (min-width: $tablet) {
-			padding-top: 0;
+			padding: 0;
 		}
 		@media (min-width: $laptop) {
 			margin-top: 40px;

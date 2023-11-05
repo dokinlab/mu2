@@ -23,12 +23,9 @@
 		border-radius: 20px;
 		padding-bottom: 270px;
 		@media (min-width: $tablet) {
-			gap: 40px;
-			padding: 50px 30px;
-		}
-		@media (min-width: $desktop) {
-			padding-left: 80px;
 			gap: 30px;
+			padding: 50px 30px;
+			padding-left: 80px;
 		}
 	}
 	&__navs {
@@ -146,7 +143,7 @@
 				padding: 15px;
 			}
 			&_black {
-				background: $black;
+				background: #000;
 				border-radius: 20px 20px 0 20px;
 				width: calc(100% - 25px);
 			}
