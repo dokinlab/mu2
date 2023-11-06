@@ -124,6 +124,12 @@
 				overflow: visible;
 				transition: $transition;
 			}
+			&_gray {
+				background: #F4F4F4;
+				button > b {
+					background: $white;
+				}
+			}
 		}
 	}
 }

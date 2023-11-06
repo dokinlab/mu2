@@ -680,19 +680,20 @@
 	font-size: 16px;
 }
 
-.list {
+.list, .content__const ul, .content__const ol {
 	margin: 0;
 	padding: 0;
 	padding-left: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	font-size: 16px;
 	li {
 		color: $light;
+		font-weight: 500;
 	}
 	span {
 		color: #878787;
+		font-weight: 400;
 	}
 }
 
@@ -727,5 +728,40 @@
 			font-size: 12px;
 			width: calc(100% - 26px);
 		}
+	}
+}
+
+.man {
+	border-radius: 20px;
+	background: $black;
+	color: $white;
+	padding: 30px 20px;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 210px;
+	display: block;
+	b {
+
+	}
+	img {
+		aspect-ratio: 1/1;
+		height: 180px;
+		object-fit: contain;
+		object-position: bottom;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	svg {
+		color: $light;
+		width: 44px;
+		height: 44px;
+		position: absolute;
+		right: 20px;
+		bottom: 135px;
+		transition: $transition;
+	}
+	&:hover svg {
+		bottom: 145px;
 	}
 }
