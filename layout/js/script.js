@@ -324,5 +324,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    if ($('.js-capitalization').is('.js-capitalization')){
+        let capitalizationSwiper = new Swiper ('.js-capitalization', {
+            loop: true,
+            navigation: {
+                prevEl: '.js-capitalization-prev',
+                nextEl: '.js-capitalization-next',
+            }
+        });
+    }
+
 
 }); // DOMContentLoaded

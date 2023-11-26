@@ -132,7 +132,7 @@
 			bottom: 30px;
 		}
 		@media (min-width: $laptop) {
-			bottom: 70px;
+			bottom: 50px;
 			right: 50px;
 			padding: 30px;
 			width: 280px;
@@ -179,9 +179,6 @@
 		bottom: 20px;
 		right: 20px;
 		z-index: 3;
-		@media (min-width: $laptop) {
-			bottom: 40px;
-		}
 		img {
 		  width: 44px;
 		  height: 57px;
