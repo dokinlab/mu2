@@ -16,6 +16,7 @@ $transition: 0.3s;
 $black:            #141414;
 $white:            #FFFFFF;
 $green:            #0AC964;
+$green-dark:       #1E9054;
 $light:            #ABD7A0;
 
 $rotate180: rotate(180deg);
@@ -73,7 +74,11 @@ img,video{object-fit:cover}
   }
 }
 
-.nav-actived, .search-actived, .profile-actived, .cities-actived {
+.nav-actived,
+.search-actived,
+.profile-actived,
+.cities-actived,
+.overflow-hidden {
   overflow: hidden;
 }
 
@@ -99,3 +104,12 @@ img,video{object-fit:cover}
 @import "blocks/calc";
 @import "blocks/price";
 @import "blocks/consult";
+@import "blocks/numbers";
+@import "blocks/support";
+@import "blocks/leader";
+@import "blocks/experience";
+@import "blocks/profit";
+@import "blocks/converse";
+@import "blocks/work";
+@import "blocks/result";
+@import "blocks/no-money";

@@ -85,7 +85,10 @@
 		&-item {
 			position: relative;
 			@media (min-width: $tablet) {
-				height: 250px;
+				height: 210px;
+			}
+			@media (min-width: $laptop) {
+				height: 280px;
 			}
 			&_i1 {
 				@media (min-width: $desktop) {
@@ -213,6 +216,7 @@
 			.solution__body-text {
 				@media (min-width: $laptop) {
 					max-width: 340px;
+					margin-top: 30px;
 				}
 			}
 			span {
@@ -225,6 +229,10 @@
 					background: $white;
 					color: $black;
 				}
+			}
+			&_white {
+				background: $white;
+				color: $black;
 			}
 			.button {
 				margin-top: 30px;

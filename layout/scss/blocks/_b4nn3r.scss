@@ -75,12 +75,14 @@
 		}
 	}
 	&__button {
+		width: 100%;
 		margin-top: 40px;
 		min-width: 190px;
 		font-weight: 600;
 		position: relative;
 		z-index: 2;
 		@media (min-width: $tablet) {
+			width: auto;
 			margin-top: 30px;
 		}
 		@media (min-width: $laptop) {
@@ -126,11 +128,12 @@
 		@media (min-width: $tablet) {
 			transform: none;
 			left: auto;
-			right: 20px;
-			bottom: 20px;
+			right: 60px;
+			bottom: 30px;
 		}
 		@media (min-width: $laptop) {
-			bottom: 60px;
+			bottom: 70px;
+			right: 50px;
 			padding: 30px;
 			width: 280px;
 		}
@@ -161,6 +164,27 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+		}
+	}
+	&__face {
+		width: 60px;
+		height: 60px;
+		background: $light;
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		overflow: hidden;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		z-index: 3;
+		@media (min-width: $laptop) {
+			bottom: 40px;
+		}
+		img {
+		  width: 44px;
+		  height: 57px;
 		}
 	}
 }

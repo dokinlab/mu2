@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     $('.js-open-nav').on('click',function(){
         $('#body').addClass('nav-actived');
+        window.scrollTo(0,0);
     });
 
     $('.js-close-nav').on('click',function(){
@@ -276,6 +277,49 @@ document.addEventListener("DOMContentLoaded", () => {
             navigation: {
                 prevEl: '.js-consult-prev',
                 nextEl: '.js-consult-next',
+            }
+        });
+    }
+
+    if ($('.js-solutions').is('.js-solutions')){
+        let solutionsSwiper = new Swiper ('.js-solutions', {
+            loop: true,
+            spaceBetween: 20
+        });
+    }
+
+    if ($('.js-experience').is('.js-experience')){
+        let experienceSwiper = new Swiper ('.js-experience', {
+            loop: true,
+            spaceBetween: 20,
+            navigation: {
+                prevEl: '.js-experience-prev',
+                nextEl: '.js-experience-next',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1290: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
+            }
+        });
+    }
+
+    if ($('.js-converse').is('.js-converse')){
+        let converseSwiper = new Swiper ('.js-converse', {
+            loop: true,
+            spaceBetween: 40,
+            navigation: {
+                prevEl: '.js-converse-prev',
+                nextEl: '.js-converse-next',
             }
         });
     }

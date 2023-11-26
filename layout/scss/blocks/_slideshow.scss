@@ -6,10 +6,11 @@
 			padding: 0 20px;
 		}
 	}
-	&__body {
+	&__wrapper {
 		@media (min-width: $laptop) {
-			overflow: hidden;
+			background: #141414;
 			border-radius: 20px;
+			overflow: hidden;
 		}
 	}
 	&__body {
@@ -25,6 +26,14 @@
 		@media (min-width: $tablet) {
 			gap: 30px;
 			padding: 50px 30px;
+			padding-left: 80px;
+		}
+		@media (min-width: $laptop) {
+			padding-left: 60px;
+			overflow: hidden;
+			border-radius: 20px;
+		}
+		@media (min-width: $desktop) {
 			padding-left: 80px;
 		}
 	}
@@ -61,6 +70,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		position: relative;
+		z-index: 1;
 		@media (min-width: $tablet) {
 			max-width: 190px;
 		}

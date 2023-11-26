@@ -585,6 +585,7 @@
 		    justify-content: center;
 		    align-items: flex-end;
 		    overflow: hidden;
+			transition: $transition;
 		    img {
 		      width: 44px;
 		      height: 57px;
