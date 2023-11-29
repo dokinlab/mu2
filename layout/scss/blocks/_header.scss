@@ -112,7 +112,7 @@
 			}
 		}
 	}
-	.active &__sub {
+	.active + &__sub {
 		display: block;
 	}
 	&__icons {

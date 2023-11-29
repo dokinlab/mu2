@@ -708,7 +708,7 @@
 		font-weight: 500;
 	}
 	span {
-		color: #878787;
+		color: $black;
 		font-weight: 400;
 	}
 }
@@ -839,6 +839,33 @@
     &:hover {
       background: $light;
       color: $black;
+    }
+  }
+}
+
+.blog {
+
+  &__pic {
+
+  }
+  &__body {
+
+  }
+  &__rubs {
+
+  }
+  &__text {
+
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+
+    }
+    svg {
+
     }
   }
 }

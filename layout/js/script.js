@@ -57,6 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    $('.js-toper-menu').on('click',function(){
+        //$('.toper__menu').removeClass('active');
+        //$(this).addClass('active');
+        //$('#body').addClass('toper-menu-actived');
+        $(this).toggleClass('active');
+    });
+
+
     $(document).keyup(function(e) {
         if (e.key === "Escape") {
             $('.js-toggle').removeClass('active');
@@ -66,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
             $('#body').removeClass('profile-actived');
             $('#body').removeClass('cities-actived');
             $('.toper__menu').removeClass('active');
+            $('#body').removeClass('toper-menu-actived');
         }
     });
 
