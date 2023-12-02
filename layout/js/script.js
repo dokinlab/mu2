@@ -22,6 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
         $(this).parent().toggleClass('active');
     });
 
+    let closeAll = function() {
+        $('.js-toggle').removeClass('active');
+        $('.js-parent-toggle').parent().removeClass('active');
+        $('#body').removeClass('nav-actived');
+        $('#body').removeClass('search-actived');
+        $('#body').removeClass('profile-actived');
+        $('#body').removeClass('cities-actived');
+        $('.toper__menu').removeClass('active');
+        $('#body').removeClass('toper-menu-actived');
+    }
+
+    $('.js-close-all').on('click',function(){
+        closeAll();
+    });
+
+    $(document).keyup(function(e) {
+        if (e.key === "Escape") {
+            closeAll();
+        }
+    });
+
 
     $('.js-open-nav').on('click',function(){
         $('#body').addClass('nav-actived');
@@ -29,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     $('.js-close-nav').on('click',function(){
+        closeAll();
         $('#body').removeClass('nav-actived');
     });
 
@@ -45,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
     $('.js-toggle-profile').on('click',function(){
         $('#body').toggleClass('profile-actived');
     });
+    $('.js-toggle-mob-profile').on('click',function(){
+        $('#body').toggleClass('nav-actived');
+        $('.js-toggle-profile').toggleClass('active');
+        $('#body').toggleClass('profile-actived');
+    });
 
 
     $('.js-toggle-cities').on('click',function(){
@@ -58,24 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     $('.js-toper-menu').on('click',function(){
-        //$('.toper__menu').removeClass('active');
-        //$(this).addClass('active');
-        //$('#body').addClass('toper-menu-actived');
-        $(this).toggleClass('active');
-    });
-
-
-    $(document).keyup(function(e) {
-        if (e.key === "Escape") {
-            $('.js-toggle').removeClass('active');
-            $('.js-parent-toggle').parent().removeClass('active');
-            $('#body').removeClass('nav-actived');
-            $('#body').removeClass('search-actived');
-            $('#body').removeClass('profile-actived');
-            $('#body').removeClass('cities-actived');
-            $('.toper__menu').removeClass('active');
-            $('#body').removeClass('toper-menu-actived');
-        }
+        closeAll();
+        $(this).addClass('active');
+        $('#body').addClass('toper-menu-actived');
     });
 
 
@@ -339,6 +351,29 @@ document.addEventListener("DOMContentLoaded", () => {
             navigation: {
                 prevEl: '.js-capitalization-prev',
                 nextEl: '.js-capitalization-next',
+            }
+        });
+    }
+
+    if ($('.js-info').is('.js-info')){
+        let infoSwiper = new Swiper ('.js-info', {
+            loop: true,
+            navigation: {
+                prevEl: '.js-info-prev',
+                nextEl: '.js-info-next',
+            }
+        });
+    }
+
+    if ($('.js-reviews').is('.js-reviews')){
+        let reviewsSwiper = new Swiper ('.js-reviews', {
+            loop: true,
+            spaceBetween: 20,
+            breakpoints: {
+                992: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                }
             }
         });
     }

@@ -61,7 +61,7 @@
 			padding-left: 40px;
 		}
 		&-numb {
-			background: #E2F8DC;
+			background: $light;
 			border-radius: 10px;
 			width: 60px;
 			height: 60px;
@@ -118,7 +118,7 @@
 		position: relative;
 		padding: 30px 20px;
 		border-radius: 20px;
-		background: #E2F8DC;
+		background: $light;
 		padding-top: 100px;
 		@media (min-width: $tablet) {
 			padding: 30px;

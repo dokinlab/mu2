@@ -112,7 +112,7 @@
 			}
 		}
 	}
-	.active + &__sub {
+	.toper-menu-actived &__sub {
 		display: block;
 	}
 	&__icons {
@@ -149,6 +149,14 @@
 }
 .nav-actived .toper {
 	display: block;
+}
+.toper-menu-actived {
+	overflow: hidden;
+	.overlay {
+		display: block;
+	}
+	.toper {
+	z-index: 10;}
 }
 
 .header {
@@ -573,7 +581,7 @@
 			border-radius: 20px;
 			padding: 20px;
 			display: flex;
-			background: #E2F8DC;
+			background: $light;
 			color: $black;
 		}
 		&-face {
@@ -770,11 +778,20 @@
 		}
 	}
 }
-.search-actived.nav-actived .search {
-	display: block;
-}
-.search-actived .search {
-	@media (min-width: $tablet) {
+.search-actived {
+	overflow: hidden;
+	&.nav-actived .search {
+		display: block;
+	}
+	.search {
+		@media (min-width: $tablet) {
+			display: block;
+		}
+	}
+	.toper {
+		z-index: 10;
+	}
+	.overlay {
 		display: block;
 	}
 }
@@ -870,11 +887,20 @@
 		}
 	}
 }
-.profile-actived.nav-actived .profile {
-	display: block;
-}
-.profile-actived .profile {
-	@media (min-width: $tablet) {
+.profile-actived {
+	overflow: hidden;
+	&.nav-actived .profile {
+		display: block;
+	}
+	.profile {
+		@media (min-width: $tablet) {
+			display: block;
+		}
+	}
+	.toper {
+		z-index: 10;
+	}
+	.overlay {
 		display: block;
 	}
 }
@@ -956,11 +982,20 @@
 		}
 	}
 }
-.cities-actived.nav-actived .cities {
-	display: block;
-}
-.cities-actived .cities {
-	@media (min-width: $tablet) {
+.cities-actived {
+	overflow: hidden;
+	&.nav-actived .cities {
+		display: block;
+	}
+	.cities {
+		@media (min-width: $tablet) {
+			display: block;
+		}
+	}
+	.toper {
+		z-index: 10;
+	}
+	.overlay {
 		display: block;
 	}
 }
