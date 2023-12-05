@@ -74,8 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    $('.js-toggle-cities').on('click',function(){
-        $('#body').toggleClass('cities-actived');
+    $('.js-open-cities').on('click',function(){
+        closeAll();
+        $('#body').addClass('cities-actived');
     });
 
 
